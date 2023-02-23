@@ -1,6 +1,7 @@
 const colorCircles = Object.values(document.getElementsByClassName('ball'));
 const rgbParagraph = document.getElementById('rgb-color');
 const answerParagraph = document.getElementById('answer');
+const resetButton = document.getElementById('reset-game');
 
 const createRGB = () => {
   const r = Math.floor(Math.random() * 255);
@@ -37,7 +38,10 @@ colorCircles.forEach((circle) => {
   });
 });
 
+resetButton.addEventListener('click', () => window.onload());
+
 window.onload = () => {
   paintCircles();
   createParagrah();
+  answerParagraph.innerHTML = 'Escolha uma cor';
 };

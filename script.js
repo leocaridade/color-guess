@@ -88,4 +88,5 @@ window.onload = () => {
   createParagrah();
   answerParagraph.innerHTML = initialText;
   scoreSpan.innerHTML = 0;
+  addClickEvents();
 };

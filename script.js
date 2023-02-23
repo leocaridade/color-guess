@@ -42,8 +42,8 @@ colorCircles.forEach((circle) => {
 });
 
 resetButton.addEventListener('click', () => {
-  createParagrah();
   paintCircles();
+  createParagrah();
   answerParagraph.innerHTML = 'Escolha uma cor';
 });
 

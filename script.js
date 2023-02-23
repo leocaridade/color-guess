@@ -2,6 +2,7 @@ const colorCircles = Object.values(document.getElementsByClassName('ball'));
 const rgbParagraph = document.getElementById('rgb-color');
 const answerParagraph = document.getElementById('answer');
 const resetButton = document.getElementById('reset-game');
+const scoreSpan = document.getElementById('score-number');
 
 const createRGB = () => {
   const r = Math.floor(Math.random() * 255);
@@ -25,8 +26,10 @@ const createParagrah = () => {
 const changeParagraph = (rgb) => {
   if (rgb === rgbParagraph.innerHTML) {
     answerParagraph.innerHTML = 'Acertou!';
+    scoreSpan.innerHTML = Number(scoreSpan.innerHTML) + 3;
   } else {
     answerParagraph.innerHTML = 'Errou! Tente novamente!';
+    scoreSpan.innerHTML = Number(scoreSpan.innerHTML) - 1;
   }
 };
 
@@ -38,10 +41,15 @@ colorCircles.forEach((circle) => {
   });
 });
 
-resetButton.addEventListener('click', () => window.onload());
+resetButton.addEventListener('click', () => {
+  createParagrah();
+  paintCircles();
+  answerParagraph.innerHTML = 'Escolha uma cor';
+});
 
 window.onload = () => {
   paintCircles();
   createParagrah();
   answerParagraph.innerHTML = 'Escolha uma cor';
+  scoreSpan.innerHTML = 0;
 };

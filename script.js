@@ -1,5 +1,6 @@
 const colorCircles = Object.values(document.getElementsByClassName('ball'));
-const paragraph = document.getElementById('rgb-color');
+const rgbParagraph = document.getElementById('rgb-color');
+const answerParagraph = document.getElementById('answer');
 
 const createRGB = () => {
   const r = Math.floor(Math.random() * 255);
@@ -17,9 +18,24 @@ const paintCircles = () => colorCircles
 
 const createParagrah = () => {
   const arrayOfRGB = colorCircles.map((circle) => circle.style.backgroundColor);
-  paragraph.innerHTML = arrayOfRGB[Math.floor(Math.random() * arrayOfRGB.length)].substr(3);
-  console.log(arrayOfRGB);
+  rgbParagraph.innerHTML = arrayOfRGB[Math.floor(Math.random() * arrayOfRGB.length)].substr(3);
 };
+
+const changeParagraph = (rgb) => {
+  if (rgb === rgbParagraph.innerHTML) {
+    answerParagraph.innerHTML = 'Acertou!';
+  } else {
+    answerParagraph.innerHTML = 'Errou! Tente novamente!';
+  }
+};
+
+colorCircles.forEach((circle) => {
+  circle.addEventListener('click', (event) => {
+    const rgb = event.target.style.backgroundColor;
+    const rgbNumbers = rgb.substr(3);
+    changeParagraph(rgbNumbers);
+  });
+});
 
 window.onload = () => {
   paintCircles();

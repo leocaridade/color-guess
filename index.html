@@ -10,13 +10,26 @@
 </head>
 <body>
   <h1 id="title">Guess the Color!!!</h1>
-  <p id="rgb-color"></p>
-  <p id="score">Placar: <span id="score-number"></span></p>
+  <p>Which circle has background color = <span id="rgb-color"></span>?</p>
+  
+  <div id="score-container">
+    <p id="score">Score: <span id="score-number"></span></p>
+    <button id="reset-score" class="btn btn-warning">Reset</button>
+  </div>
+  
   <section></section>
   <p id="answer"></p>
-  <div id="div-button">
-    <button id="difficulty" class="btn btn-primary">Change difficulty</button>
-    <button id="reset-game" class="btn btn-secondary">Reset</button>
+  <div id="reset-colors-container">
+    <button id="reset-game" class="btn btn-secondary">Change colors</button>
+  </div>
+
+  <div id="difficulty-container">
+    <label for="change-difficulty">Difficulty level:</label>
+    <select name="change-difficulty" id="change-difficulty" class="form-select">
+      <option value="Easy" id="easy">Easy</option>
+      <option value="Medium" id="medium" selected>Medium</option>
+      <option value="Hard" id="hard">Hard</option>
+    </select>
   </div>
 
   <script src="script.js"></script>

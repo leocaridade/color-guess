@@ -8,9 +8,21 @@ body {
 }
 
 h1 {
-  text-align: center;
-  margin: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0 40px;
   font-size: 3em;
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 2.3em;
+  }
+
+  #rgb-color {
+    font-size: 1.2em;
+  }
 }
 
 p {
@@ -19,12 +31,25 @@ p {
   margin-top: 15px;
 }
 
+#rgb-color {
+  text-decoration: underline;
+}
+
+#score-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
 section {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 15px;
-  margin-top: 50px;
+  margin-top: 30px;
+  flex-wrap: wrap;
 }
 
 .ball {
@@ -34,9 +59,24 @@ section {
   border-radius: 50%;
 }
 
-#div-button {
+#reset-colors-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+}
+
+#difficulty-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  font-size: 1.3em;
+  margin-right: 5px;
+}
+
+.form-select {
+  max-width: 110px;
 }
